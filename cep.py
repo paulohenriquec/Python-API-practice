@@ -24,3 +24,7 @@ while True:
     #Se a requisição tiver sido bem sucedida, eu salvo o retorno json na minha lista data
     if resp.status_code == 200:
         data.append(resp.json())
+#%%
+#3ª etapa: salvar em um arquivo json
+with open("ceps.json", "w", encoding='utf-8') as open_file:
+    json.dump(data, open_file, ensure_ascii=False, indent=4)
